@@ -1,17 +1,13 @@
+#still need HttpResponse if having stub methods for detail,results and vote
 from django.http import HttpResponse
-from django.template import RequestContext, loader
+from django.shortcuts import render
 from .models import Question
 
 # Create your views here.
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    #if no loading template, the view doesn't take effect from the template 
-    #polls/templates/polls/index.html
-    template = loader.get_template('polls/index.html')
-    context = RequestContext(request, {
-        'latest_question_list': latest_question_list,
-    })
-    return HttpResponse(template.render(context))
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
 
 #tkkQ: must request be input?
 #detail(request=<HttpRequest object>, question_id='34')
