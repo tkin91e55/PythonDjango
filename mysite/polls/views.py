@@ -1,7 +1,7 @@
 #tkkA: still need HttpResponse if having stub methods for detail,results and vote
 from django.http import HttpResponse
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Question
 
@@ -12,10 +12,7 @@ def index(request):
     return render(request, 'polls/index.html', context)
 
 def detail(request, question_id):
-    try:
-        question = Question.objects.get(pk=question_id)
-    except Question.DoesNotExist:
-        raise Http404("Question does not exist")
+    question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
 def results(request, question_id):
