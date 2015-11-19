@@ -9,6 +9,8 @@ urlpatterns = [
     # tkkA: refer to views.py, detail is the function name correspondingly
     # tkkA: so question_id is the group name/input parameter id stored when grep the result
     #      see views.py, % question_id, it is where the function input param come from
+    # tkkA: url(r'^specifics/(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
+    #      then polls details view is like polls/specifics/12
     url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
     # ex: /polls/5/results/
     url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
