@@ -1,0 +1,4 @@
+Django==1.4.21
+South==1.0.1
+argparse==1.2.1
+wsgiref==0.1.2
