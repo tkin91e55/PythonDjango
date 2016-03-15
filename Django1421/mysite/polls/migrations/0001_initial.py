@@ -17,4 +17,4 @@ class Migration(SchemaMigration):
         
     }
 
-    complete_apps = ['poll']
+    complete_apps = ['polls']
