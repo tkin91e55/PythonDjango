@@ -1,5 +1,6 @@
 import multiprocessing
 
+#preload_app is gunicorn settings,http://docs.gunicorn.org/en/stable/settings.html#server-mechanics
 preload_app = True
 timeout = 300
 bind = "127.0.0.1:8080"
