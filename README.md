@@ -6,3 +6,4 @@ virtualenv 1.11.6
 Remarks:
 (1) read requirements.txt
 (2) put etc/init/supervisor.conf under system /etc/init to auto start the service
+(3) need to edit the Django1421/mysite/settings.py STATIC_ROOT
