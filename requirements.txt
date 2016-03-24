@@ -1,9 +1,5 @@
 Django==1.4.21
 South==1.0.1
 argparse==1.2.1
+gunicorn==19.4.5
 wsgiref==0.1.2
-https://jeffknupp.com/blog/2012/10/24/starting-a-django-14-project-the-right-way/
-
-Reminder
-(1) in supervisord.conf, need to create the var/log file if doesn't exist, supervisord won't create by self.
-	also var/supervisor, var/log/supervisor
